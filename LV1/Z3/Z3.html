@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D3.js Example</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+    <script>
+        // Data array for 10 items
+        const data = Array.from({ length: 10 }, (_, i) => i + 1);
+
+        // Using D3.js to create the specified HTML structure dynamically
+        const body = d3.select('body');
+
+        // Append h1 element
+        body.append('h1')
+            .text('Naslov dokumenta');
+
+        // Select all div elements and bind data
+        const divs = body.selectAll('div')
+            .data(data)
+            .enter()
+            .append('div');
+
+        // Append h2 and p elements inside each div
+        divs.append('h2')
+            .text(d => 'Podnaslov ' + d);
+        divs.append('p')
+            .text(d => 'Tekst ' + d);
+
+        // Get text content of all p elements
+        const paragraphs = body.selectAll('p');
+        paragraphs.each(function (d, i) {
+            console.log('Text content of paragraph ' + (i + 1) + ':', d3.select(this).text());
+        });
+    </script>
+</body>
+</html>

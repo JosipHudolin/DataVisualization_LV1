@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D3.js Example</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+    <script>
+        // Select the body element
+        const body = d3.select('body');
+
+        // Append h1 element
+        body.append('h1')
+            .text('Naslov dokumenta');
+
+        // Append div elements
+        const div1 = body.append('div');
+        const div2 = body.append('div');
+
+        // Append h2 and p elements inside the first div
+        div1.append('h2')
+            .text('Podnaslov 1');
+        div1.append('p')
+            .text('Tekst 1.');
+
+        // Append h2 and p elements inside the second div
+        div2.append('h2')
+            .text('Podnaslov 2');
+        div2.append('p')
+            .text('Tekst 2.');
+    </script>
+</body>
+</html>

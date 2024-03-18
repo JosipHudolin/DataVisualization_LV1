@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D3.js SVG Rectangle Example</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+    <script>
+        // Dimenzije pravokutnika
+        const width = 300;
+        const height = 400;
+
+        // Kreiranje SVG elementa
+        const svg = d3.select('body')
+            .append('svg')
+            .attr('width', width)
+            .attr('height', height);
+
+        // Postavljanje pravokutnika
+        svg.append('rect')
+            .attr('width', width)
+            .attr('height', height)
+            .attr('fill', 'blue')  // Plava boja unutrašnjosti
+            .attr('stroke', 'black')  // Crna boja obruba
+            .attr('stroke-width', 1)  // Debljina obruba 1px
+            .style('fill-opacity', 0.5)  // Prozirnost unutrašnjosti 50%
+            .style('stroke-opacity', 1);  // Prozirnost obruba 100%
+    </script>
+</body>
+</html>

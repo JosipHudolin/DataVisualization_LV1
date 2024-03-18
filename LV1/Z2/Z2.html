@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D3.js Example</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+    <script>
+        // Select the body element
+        const body = d3.select('body');
+
+        // Append h1 element
+        body.append('h1')
+            .text('Naslov dokumenta');
+
+        // Append div elements and assign IDs
+        const div1 = body.append('div')
+            .attr('id', 'ID1');
+        const div2 = body.append('div')
+            .attr('id', 'ID2');
+
+        // Append h2 and p elements inside the first div
+        div1.append('h2')
+            .text('Podnaslov 1');
+        const p1 = div1.append('p');
+        p1.text('Statični sadržaj 1.'); // Change text content of the first paragraph
+
+        // Append h2 and p elements inside the second div
+        div2.append('h2')
+            .text('Podnaslov 2');
+        const p2 = div2.append('p');
+        p2.text('Statični sadržaj 2.'); // Change text content of the second paragraph
+
+        // Get text content of both p elements
+        const textContent1 = p1.text();
+        const textContent2 = p2.text();
+
+        console.log('Text content of the first p element:', textContent1);
+        console.log('Text content of the second p element:', textContent2);
+    </script>
+</body>
+</html>

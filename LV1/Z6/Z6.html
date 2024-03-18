@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D3.js SVG Scene</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+    <script>
+        const svgWidth = 800;
+        const svgHeight = 600;
+
+        const svg = d3.select('body')
+            .append('svg')
+            .attr('width', svgWidth)
+            .attr('height', svgHeight)
+            .style('background-color', 'lightblue');
+
+        // Sunce
+        svg.append('circle')
+            .attr('cx', 100)
+            .attr('cy', 100)
+            .attr('r', 50)
+            .attr('fill', 'yellow');
+
+        // Oblaci
+        svg.append('ellipse')
+            .attr('cx', 200)
+            .attr('cy', 150)
+            .attr('rx', 80)
+            .attr('ry', 40)
+            .attr('fill', 'white');
+        svg.append('ellipse')
+            .attr('cx', 300)
+            .attr('cy', 120)
+            .attr('rx', 70)
+            .attr('ry', 30)
+            .attr('fill', 'white');
+        svg.append('ellipse')
+            .attr('cx', 400)
+            .attr('cy', 150)
+            .attr('rx', 90)
+            .attr('ry', 45)
+            .attr('fill', 'white');
+
+        // Kuća
+        svg.append('rect')
+            .attr('x', 200)
+            .attr('y', 300)
+            .attr('width', 200)
+            .attr('height', 200)
+            .attr('fill', 'brown');
+
+        // Krov
+        svg.append('polygon')
+            .attr('points', '200,300 400,300 300,200')
+            .attr('fill', 'red');
+
+        // Vrata
+        svg.append('rect')
+            .attr('x', 310)
+            .attr('y', 400)
+            .attr('width', 80)
+            .attr('height', 100)
+            .attr('fill', 'gray');
+
+        // Prozori
+        svg.append('rect')
+            .attr('x', 210)
+            .attr('y', 330)
+            .attr('width', 60)
+            .attr('height', 60)
+            .attr('fill', 'lightblue');
+        svg.append('rect')
+            .attr('x', 330)
+            .attr('y', 330)
+            .attr('width', 60)
+            .attr('height', 60)
+            .attr('fill', 'lightblue');
+
+        // Trava
+        svg.append('rect')
+            .attr('x', 0)
+            .attr('y', 500)
+            .attr('width', svgWidth)
+            .attr('height', 100)
+            .attr('fill', 'green');
+    </script>
+</body>
+</html>

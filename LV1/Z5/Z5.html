@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olympic Rings with D3.js</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+    <script>
+        const svgWidth = 600;
+        const svgHeight = 300;
+
+        const svg = d3.select('body')
+            .append('svg')
+            .attr('width', svgWidth)
+            .attr('height', svgHeight);
+
+        const ringColors = ['#0085C0', '#000', '#F4C300', '#009F3D', '#DF0024'];
+
+        const ringRadius = 50;
+
+        const ringsData = [
+            {cx: 100, cy: 100, color: ringColors[0]},
+            {cx: 220, cy: 100, color: ringColors[1]},
+            {cx: 340, cy: 100, color: ringColors[4]},
+            {cx: 160, cy: 155, color: ringColors[2]},
+            {cx: 280, cy: 155, color: ringColors[3]}
+        ];
+
+        svg.selectAll('circle')
+            .data(ringsData)
+            .enter()
+            .append('circle')
+            .attr('cx', d => d.cx)
+            .attr('cy', d => d.cy)
+            .attr('r', ringRadius)
+            .style('fill', 'none')
+            .style('stroke', d => d.color)
+            .style('stroke-width', 10);
+    </script>
+</body>
+</html>
